@@ -1,0 +1,73 @@
+/// \mainpage 
+///
+/// \image html cayley2.jpg
+///
+/// The Cayley PRNG, named after the mathematician Arthur Cayley (1821–1895)
+/// pictured above, uses a pair of generators of a symmetric group to generate
+/// pseudorandom permutations which are then converted to pseudorandom numbers.
+/// Cayley's Theorem states that every group is isomorphic to a subgroup of the
+/// symmetric group acting on the group, which implies that symmetric groups have
+/// a rich structure. The Cayley PRNG exploits this rich structure as a source of
+/// pseudorandomness.
+///
+/// Compiling the Code
+/// ==================
+///
+/// Windows and Visual Studio
+/// -------------------------
+///
+/// A Visual Studio solution file **PRNG.sln** has been provided in the
+/// root folder. It has been tested with Visual Studio 2019 Community under Windows 10.
+///
+/// Unix and g++
+/// ------------
+///
+/// A **make** file has been placed in the **Code** directory. Type
+/// "make generator" to create the executable file **generate.exe**. It has been
+/// tested with g++ 7.4 on the Ubuntu 18.04.1 subsystem under Windows 10.
+///
+/// Running the Code
+/// ================
+///
+/// Running **generator.exe** will perform a time-test on Cayley32
+/// versus the Mersenne Twister with a preset seed.
+/// Optional switches are as follows:
+///
+/// <center>
+/// <table>
+///   <tr>
+///     <td><center><b>Switch</b></center></td>
+///     <td><center><b>Description</b></center></td>
+///   <tr>
+///     <td><center>-h</center></td>
+///     <td> Display help. </td>
+///   <tr>
+///     <td><center>-g</center></td>
+///     <td> 
+///       Generate an infinite number of pseudorandom bits from Cayley32
+///       to stdout.
+///     </td>
+///   <tr>
+///     <td><center>-ge</center></td>
+///     <td> 
+///       Generate an infinite number of pseudorandom bits from Cayley32e
+///       to stdout.
+///     </td>
+///   <tr>
+///     <td><center>-gm</center></td>
+///     <td> 
+///       Generate an infinite number of pseudorandom bits from the Mersenne Twister
+///       to stdout.
+///     </td>
+///   <tr>
+///     <td><center>-s \f$n\f$</center></td>
+///     <td> Seed value \f$n\f$, a hexidecimal number. </td>
+/// </table>
+/// </center>
+///
+/// The following screenshot shows how to use the **-h**, **-g**, and **-s** switches.
+///
+/// \image html ss0.png
+///
+
+
