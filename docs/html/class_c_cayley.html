@@ -90,7 +90,7 @@ Inheritance diagram for CCayley:</div>
  <div class="center">
   <img src="class_c_cayley.png" usemap="#CCayley_map" alt=""/>
   <map id="CCayley_map" name="CCayley_map">
-<area href="class_cayley32e.html" title="The Cayley PRNG over ." alt="Cayley32e" shape="rect" coords="0,56,73,80"/>
+<area href="class_cayley32e.html" title="The Cayley PRNG over  with pseudo-random generators." alt="Cayley32e" shape="rect" coords="0,56,73,80"/>
 <area href="class_cayley32.html" title="The Cayley PRNG over  with fixed generators." alt="Cayley32" shape="rect" coords="0,112,73,136"/>
   </map>
 </div></div>
@@ -259,7 +259,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get generator. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Reader function for the generators. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">i</td><td>Generator number, either 0 or 1. </td></tr>
   </table>
@@ -285,7 +285,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get the current permutation. </p><dl class="section return"><dt>Returns</dt><dd>Const reference to the current permutation. </dd></dl>
+<p>Reader function for the current permutation. </p><dl class="section return"><dt>Returns</dt><dd>Const reference to the current permutation. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_cayley_8cpp_source.html#l00109">109</a> of file <a class="el" href="_cayley_8cpp_source.html">Cayley.cpp</a>.</p>
 
@@ -305,9 +305,9 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get the current permutation. </p><dl class="section return"><dt>Returns</dt><dd>The permutation size. </dd></dl>
+<p>Reader function for the the permutation size, that is, the number of items permuted by the curret permutation and the generators. </p><dl class="section return"><dt>Returns</dt><dd>The permutation size. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_cayley_8cpp_source.html#l00116">116</a> of file <a class="el" href="_cayley_8cpp_source.html">Cayley.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_cayley_8cpp_source.html#l00117">117</a> of file <a class="el" href="_cayley_8cpp_source.html">Cayley.cpp</a>.</p>
 
 </div>
 </div>
@@ -333,9 +333,12 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Generate the next pseudo-random permutation. </p>
-
-<p class="definition">Definition at line <a class="el" href="_cayley_8cpp_source.html#l00122">122</a> of file <a class="el" href="_cayley_8cpp_source.html">Cayley.cpp</a>.</p>
+<p>Generate the next pseudo-random permutation as follows. Get the exponent \(k\) from the delay line and multiply the current permutation \(\phi\) by the current generator \(\sigma_i\) to the power \(k\).</p>
+<div class="image">
+<img src="before.jpg" alt="before.jpg"/>
+</div>
+ 
+<p class="definition">Definition at line <a class="el" href="_cayley_8cpp_source.html#l00128">128</a> of file <a class="el" href="_cayley_8cpp_source.html">Cayley.cpp</a>.</p>
 
 </div>
 </div>
@@ -401,7 +404,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 10 2020 14:11:30 for Cayley by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 11 2020 11:00:42 for Cayley by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>

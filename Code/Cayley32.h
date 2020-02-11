@@ -6,9 +6,10 @@
 
 #include "Cayley.h"
 
-/// \brief The Cayley PRNG over \f$S_{32}\f$.
+/// \brief The Cayley PRNG over \f$S_{32}\f$ with pseudo-random generators.
 ///
-/// A 64-bit Cayley PRNG with permutation size 32 with pseudo-random generators.
+/// A 64-bit Cayley PRNG with permutation size 32 and pseudo-random generators
+/// generated using the Mersenne Twister.
 
 class Cayley32e: public CCayley{
   public:
@@ -20,7 +21,7 @@ class Cayley32e: public CCayley{
 
 /// \brief The Cayley PRNG over \f$S_{32}\f$ with fixed generators.
 ///
-/// A 64-bit Cayley PRNG with permutation size 32 with fixed generators.
+/// A 64-bit Cayley PRNG with permutation size 32 and fixed generators.
 
 class Cayley32: public Cayley32e{
   private:

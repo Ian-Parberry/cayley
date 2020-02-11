@@ -10,7 +10,11 @@
 Cayley32e::Cayley32e(): CCayley(32){
 } //constructor
 
-/// Generate a pseudo-random permutation and map it to a 64-bit unsigned int.
+/// Generate a pseudo-random permutation and map it to a 64-bit unsigned int,
+/// as follows. Update the current permutation, then exclusive-or together
+/// the product of the permutation map entries times 32 random strings.
+/// These strings are fixed in this implementation but they should be replaced
+/// and not be made public to protect against reverse engineering.
 /// \return A pseudo-random 64-bit unsigned integer.
 
 uint64_t Cayley32e::rand(){
@@ -51,7 +55,10 @@ Cayley32::Cayley32(){
 } //constructor
 
 /// Choose the generators and initialize the power tables. 
-/// This function overrides CCayley::ChooseGenerators().
+/// A pair of fixed generators is used here, but they should be replaced
+/// and not be made public to protect against reverse engineering.
+/// CCayley::ChooseGenerators() will find generators that have a high
+/// probability of being strong.
 
 void Cayley32::ChooseGenerators(){ 
   uintx_t gen0("350F1C2036E12600512A8400920E");

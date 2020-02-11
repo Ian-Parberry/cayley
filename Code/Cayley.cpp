@@ -50,7 +50,7 @@ CCayley::~CCayley(){
   delete m_pCurPerm;
 } //destructor
 
-/// Get generator.
+/// Reader function for the generators.
 /// \param i Generator number, either 0 or 1.
 /// \return Hex string of generator reverse lexicographic number.
 
@@ -103,29 +103,34 @@ void CCayley::srand(uint64_t (*rand)(void)){
   m_pCurPerm->Randomize(rand); //random permutations
 } //Initialize
 
-/// Get the current permutation.
+/// Reader function for the current permutation.
 /// \return Const reference to the current permutation.
 
 const CPerm& CCayley::GetPerm() const{
   return *m_pCurPerm;
 } //GetPerm
 
-/// Get the current permutation.
+/// Reader function for the the permutation size, that is, the number of items
+/// permuted by the curret permutation and the generators.
 /// \return The permutation size.
 
 const uint32_t CCayley::GetSize() const{
   return m_nSize;
 } //GetSize
 
-/// Generate the next pseudo-random permutation.
+/// Generate the next pseudo-random permutation as follows.
+/// Get the exponent \f$k\f$ from the delay line and multiply the current
+/// permutation \f$\phi\f$ by the current generator \f$\sigma_i\f$ to the power
+/// \f$k\f$.
+///
+/// \image html before.jpg
 
 void CCayley::NextPerm(){
   static unsigned int i = 0; //generator parity; determines current generator 
   CPerm& perm = *m_pCurPerm; //shorthand for the current permutation
-  const uint32_t n = m_nDelayLine[m_nTail]%m_nOrder; //exponent
+  const uint32_t k = m_nDelayLine[m_nTail]%m_nOrder; //exponent
 
-  perm *= m_nPower[i][n]; //multiply by generator i to the power n
+  perm *= m_nPower[i][k]; //multiply by generator i to the power k
   i ^= 1; //flip generator parity
   assert(i < 2); //safety
 } //NextPerm
-

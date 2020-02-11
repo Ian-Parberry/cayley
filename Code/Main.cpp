@@ -21,8 +21,6 @@ enum class Task{
   Time, Generate, GenerateEx, GenerateMT, None
 }; //Task
 
-bool g_bVerbose = false; ///< Verbosity flag.
-
 /// \brief Print help.
 ///
 /// Print canned help message to stdout.

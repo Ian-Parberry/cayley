@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>The Cayley PRNG over \(S_{32}\).  
+<p>The Cayley PRNG over \(S_{32}\) with pseudo-random generators.  
  <a href="class_cayley32e.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_cayley32_8h_source.html">Cayley32.h</a>&gt;</code></p>
@@ -161,9 +161,9 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <tr class="separator:a2514f5fa6840e5493ce178fd1268068a inherit pro_static_attribs_class_c_cayley"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A 64-bit Cayley PRNG with permutation size 32 with pseudo-random generators. </p>
+<div class="textblock"><p>A 64-bit Cayley PRNG with permutation size 32 and pseudo-random generators generated using the Mersenne Twister. </p>
 
-<p class="definition">Definition at line <a class="el" href="_cayley32_8h_source.html#l00013">13</a> of file <a class="el" href="_cayley32_8h_source.html">Cayley32.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_cayley32_8h_source.html#l00014">14</a> of file <a class="el" href="_cayley32_8h_source.html">Cayley32.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a853d283747e806b4c5c6507ece78a0fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a853d283747e806b4c5c6507ece78a0fe">&#9670;&nbsp;</a></span>rand()</h2>
@@ -179,16 +179,16 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Generate a pseudo-random permutation and map it to a 64-bit unsigned int. </p><dl class="section return"><dt>Returns</dt><dd>A pseudo-random 64-bit unsigned integer. </dd></dl>
+<p>Generate a pseudo-random permutation and map it to a 64-bit unsigned int, as follows. Update the current permutation, then exclusive-or together the product of the permutation map entries times 32 random strings. These strings are fixed in this implementation but they should be replaced and not be made public to protect against reverse engineering. </p><dl class="section return"><dt>Returns</dt><dd>A pseudo-random 64-bit unsigned integer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_cayley32_8cpp_source.html#l00016">16</a> of file <a class="el" href="_cayley32_8cpp_source.html">Cayley32.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_cayley32_8cpp_source.html#l00020">20</a> of file <a class="el" href="_cayley32_8cpp_source.html">Cayley32.cpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 10 2020 14:11:30 for Cayley by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 11 2020 11:00:42 for Cayley by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.15
 </small></address>
